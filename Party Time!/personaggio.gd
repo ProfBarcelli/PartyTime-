@@ -2,6 +2,7 @@ extends CharacterBody2D
 const g = 9.81
 var n_salti = 0 
 var max_salti = 2
+#ciao a tutti
 func _physics_process(delta):
 	var d = Vector2()
 	if Input.is_action_pressed("ui_left"):
