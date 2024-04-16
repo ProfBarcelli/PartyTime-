@@ -26,4 +26,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up") and n_salti<max_salti :
 		velocity.y += -300
 		n_salti += 1
+		
+	if velocity == Vector2.ZERO:
+		$AnimationPlayer.play($Idle)
 	move_and_slide()
