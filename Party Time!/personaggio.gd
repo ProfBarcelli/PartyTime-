@@ -21,11 +21,11 @@ func play_Animation():
 #ciao a tutti
 func _physics_process(delta):
 	var d = Vector2()
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("move_left"):
 		d.x = -1
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move_right"):
 		d.x = 1
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("dash"):
 		var old_velocity = velocity
 		velocity = Vector2(1000,0)
 		move_and_slide()
@@ -39,7 +39,7 @@ func _physics_process(delta):
 		velocity.y += g*delta*100
 	else:
 		n_salti = 0
-	if Input.is_action_just_pressed("ui_up") and n_salti<max_salti :
+	if Input.is_action_just_pressed("jump") and n_salti<max_salti :
 		velocity.y += -300
 		n_salti += 1
 	if velocity.x<-0.5:
