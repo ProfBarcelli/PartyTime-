@@ -1,80 +1,17 @@
-[gd_scene load_steps=33 format=3 uid="uid://bdhfob71oixdn"]
+[gd_scene load_steps=12 format=3 uid="uid://bdhfob71oixdn"]
 
 [ext_resource type="Script" path="res://personaggio.gd" id="1_dg6h0"]
-[ext_resource type="Texture2D" uid="uid://b73cc17e0en2n" path="res://Sprites/Characters/Party/Fall/Party_fallWIP1.png" id="2_4tr34"]
-[ext_resource type="Texture2D" uid="uid://ddfiwkaomvmxv" path="res://Sprites/Characters/Party/Acceleration/Party_accelerateWIP1.png" id="2_ibk6a"]
 [ext_resource type="Texture2D" uid="uid://dxgitvb4xm23q" path="res://Sprites/Characters/Party/Idle/Party_Idle-export1.png" id="2_ioi36"]
 [ext_resource type="Texture2D" uid="uid://j0i21qkhtgny" path="res://Sprites/Characters/Party/Idle/Party_LeftIdle1.png" id="2_om8tl"]
-[ext_resource type="Texture2D" uid="uid://c023itv5c06f0" path="res://Sprites/Characters/Party/Acceleration/Party_accelerateWIP2.png" id="3_1s3ul"]
 [ext_resource type="Texture2D" uid="uid://b3o336xm11c5e" path="res://Sprites/Characters/Party/Idle/Party_LeftIdle2.png" id="3_3y7mi"]
-[ext_resource type="Texture2D" uid="uid://b1uaq20k44dbr" path="res://Sprites/Characters/Party/Fall/Party_fallWIP2.png" id="3_e4l6d"]
 [ext_resource type="Texture2D" uid="uid://b7ea6bpbtpdsd" path="res://Sprites/Characters/Party/Idle/Party_Idle-export2.png" id="3_wadic"]
-[ext_resource type="Texture2D" uid="uid://b45q13q0l0l3j" path="res://Sprites/Characters/Party/Fall/Party_fallWIP3.png" id="4_6uqsb"]
 [ext_resource type="Texture2D" uid="uid://dmftsksyc45ma" path="res://Sprites/Characters/Party/Idle/Party_LeftIdle3.png" id="4_e23g3"]
-[ext_resource type="Texture2D" uid="uid://d3qeu6onhrsbk" path="res://Sprites/Characters/Party/Acceleration/Party_accelerateWIP3.png" id="4_ky4ev"]
 [ext_resource type="Texture2D" uid="uid://dldlygw86bypu" path="res://Sprites/Characters/Party/Idle/Party_Idle-export3.png" id="4_tb5fa"]
 [ext_resource type="Texture2D" uid="uid://cjww8e30oqfhe" path="res://Sprites/Characters/Party/Idle/Party_Idle-export4.png" id="5_ipim4"]
 [ext_resource type="Texture2D" uid="uid://dr8r6kredter" path="res://Sprites/Characters/Party/Idle/Party_LeftIdle4.png" id="5_kub4y"]
-[ext_resource type="Texture2D" uid="uid://dy1y1j1cikdqk" path="res://Sprites/Characters/Party/Hurt/Party_hurtWIP1.png" id="8_85ptr"]
-[ext_resource type="Texture2D" uid="uid://x1n270wxu2j2" path="res://Sprites/Characters/Party/Hurt/Party_hurtWIP2.png" id="9_ocfep"]
-[ext_resource type="Texture2D" uid="uid://diiy4qyko2fhj" path="res://Sprites/Characters/Party/Walk/Party_WalkWIP1.png" id="10_or5u2"]
-[ext_resource type="Texture2D" uid="uid://ddlvk8elnsfnx" path="res://Sprites/Characters/Party/Hurt/Party_hurtWIP3.png" id="10_uvnau"]
-[ext_resource type="Texture2D" uid="uid://bx48iqea7vmpv" path="res://Sprites/Characters/Party/Walk/Party_WalkWIP2.png" id="11_04byn"]
-[ext_resource type="Texture2D" uid="uid://c6dp4ahoncnhi" path="res://Sprites/Characters/Party/Walk/Party_WalkWIP3.png" id="12_0p3bd"]
-[ext_resource type="Texture2D" uid="uid://h45q2icdyfbd" path="res://Sprites/Characters/Party/Walk/Party_WalkWIP4.png" id="13_6lgds"]
-[ext_resource type="Texture2D" uid="uid://5j8sni87aj26" path="res://Sprites/Characters/Party/Walk/Party_WalkWIP5.png" id="14_0cju6"]
-[ext_resource type="Texture2D" uid="uid://bpiwog0d55p6v" path="res://Sprites/Characters/Party/Walk/Party_WalkWIP6.png" id="15_3pkab"]
-[ext_resource type="Texture2D" uid="uid://cerskthbjvxky" path="res://Sprites/Characters/Party/Walk/Party_WalkWIP7.png" id="16_3n7x4"]
-[ext_resource type="Texture2D" uid="uid://dnewn3kgyrap5" path="res://Sprites/Characters/Party/Run/Party_runWIP1.png" id="19_b855s"]
-[ext_resource type="Texture2D" uid="uid://76rpsegpc0r4" path="res://Sprites/Characters/Party/Run/Party_runWIP3.png" id="20_00i70"]
-[ext_resource type="Texture2D" uid="uid://ch7moe3l5yf8n" path="res://Sprites/Characters/Party/Run/Party_runWIP2.png" id="21_5mbth"]
-[ext_resource type="Texture2D" uid="uid://bx7pck0vwefst" path="res://Sprites/Characters/Party/Run/Party_runWIP4.png" id="22_pupjn"]
-[ext_resource type="Texture2D" uid="uid://ddw4d5o8m1560" path="res://Sprites/Characters/Party/Run/Party_runWIP5.png" id="23_aj3ku"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mj2m4"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ibk6a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_1s3ul")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ky4ev")
-}],
-"loop": true,
-"name": &"Acceleration",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_4tr34")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_e4l6d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_6uqsb")
-}],
-"loop": true,
-"name": &"Fall",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_85ptr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_ocfep")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_uvnau")
-}],
-"loop": true,
-"name": &"Hurt",
-"speed": 10.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_om8tl")
@@ -111,59 +48,8 @@ animations = [{
 }, {
 "frames": [],
 "loop": true,
-"name": &"Run_Left",
+"name": &"new_animation",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("19_b855s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_00i70")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_5mbth")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_pupjn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_aj3ku")
-}],
-"loop": true,
-"name": &"Run_Right",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"Walk_Left",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_or5u2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_04byn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_0p3bd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_6lgds")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_0cju6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_3pkab")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_3n7x4")
-}],
-"loop": true,
-"name": &"Walk_Right",
-"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ebur"]
@@ -176,8 +62,7 @@ script = ExtResource("1_dg6h0")
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_mj2m4")
-animation = &"Fall"
-frame_progress = 0.940973
+animation = &"new_animation"
 speed_scale = 0.75
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
