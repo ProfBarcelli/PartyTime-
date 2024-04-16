@@ -14,6 +14,8 @@ func play_Animation():
 			%Animation.play("Walk_Right")
 		else:
 			%Animation.play("Walk_Right")
+	if velocity.y >0:
+		%Animation.play("Fall")
 
 
 #ciao a tutti
