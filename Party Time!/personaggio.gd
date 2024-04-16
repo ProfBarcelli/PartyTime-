@@ -2,6 +2,20 @@ extends CharacterBody2D
 const g = 9.81
 var n_salti = 0 
 var max_salti = 2
+var dir_sx = false
+func play_Animation():
+	if abs(velocity.x) <5:
+		if dir_sx:
+			%Animation.play("Idle_Left")
+		else:
+			%Animation.play("Idle_Right")
+	else:
+		if dir_sx:
+			%Animation.play("Walk_Right")
+		else:
+			%Animation.play("Walk_Right")
+
+
 #ciao a tutti
 func _physics_process(delta):
 	var d = Vector2()
@@ -26,7 +40,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up") and n_salti<max_salti :
 		velocity.y += -300
 		n_salti += 1
-		
-	if velocity == Vector2.ZERO:
-		%Animation.play("Idle_Right")
+	if velocity.x<-0.5:
+		dir_sx = true
+	if velocity.x>0.5:
+		dir_sx = false
+	play_Animation()
 	move_and_slide()
