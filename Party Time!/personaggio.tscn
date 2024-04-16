@@ -177,7 +177,7 @@ script = ExtResource("1_dg6h0")
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_mj2m4")
 animation = &"Fall"
-frame_progress = 0.940973
+frame_progress = 0.657426
 speed_scale = 0.75
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
