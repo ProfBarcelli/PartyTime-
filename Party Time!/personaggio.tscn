@@ -60,6 +60,7 @@ height = 114.0
 script = ExtResource("1_dg6h0")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_mj2m4")
 animation = &"new_animation"
 speed_scale = 0.75

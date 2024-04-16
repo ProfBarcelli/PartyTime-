@@ -28,5 +28,5 @@ func _physics_process(delta):
 		n_salti += 1
 		
 	if velocity == Vector2.ZERO:
-		$AnimationPlayer.play($Idle)
+		%Animation.play("Idle_Right")
 	move_and_slide()
