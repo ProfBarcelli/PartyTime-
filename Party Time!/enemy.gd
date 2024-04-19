@@ -16,8 +16,6 @@ func _ready():
 	##if not is_on_floor():
 		##velocity.y += gravity * delta
 		
-func player_damage():
-	if %Area2D.overlaps_body() > 0:
-		take_damage()
+
 
 	move_and_slide()

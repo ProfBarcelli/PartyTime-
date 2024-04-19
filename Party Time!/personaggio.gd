@@ -56,3 +56,6 @@ func take_damage():
 	
 	if health == 0:
 		queue_free()
+func player_damage():
+	if %Area2D.overlaps_body() > 0:
+		take_damage()
