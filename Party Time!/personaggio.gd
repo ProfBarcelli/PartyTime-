@@ -1,5 +1,6 @@
 extends CharacterBody2D
 const g = 9.81
+var health = 100
 var n_salti = 0 
 var max_salti = 2
 var dir_sx = false
@@ -48,3 +49,10 @@ func _physics_process(delta):
 		dir_sx = false
 	play_Animation()
 	move_and_slide()
+	
+func take_damage():
+	health -=1 
+	%Animation.play("Hurt")
+	
+	if health == 0:
+		queue_free()
