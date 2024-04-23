@@ -7,8 +7,15 @@ var health = 100
 var n_salti = 0 
 var max_salti = 2
 var dir_sx = false
-func play_Animation():
+var damaged = false
 
+@export var player:Strider_K = null
+func play_Animation():
+	if damaged:
+		%Animation.play("Hurt")
+		damaged= false
+		return
+	
 	if Input.is_action_just_pressed("jump"):
 		%Animation.play("Jump_Right")
 		
@@ -57,12 +64,14 @@ func _physics_process(delta):
 	play_Animation()
 	move_and_slide()
 	
-func take_damage():
-	health -=1 
-	%Animation.play("Hurt")
 	
+func take_damage():
+	print("took damage")
+	health -=1 
+	damaged = true
 	if health == 0:
 		queue_free()
+
 func player_damage():
 	if %Area2D.overlaps_body() > 0:
 		take_damage()

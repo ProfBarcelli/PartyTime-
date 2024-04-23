@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name Strider_K
 
+var health=50
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export var player:Giocatore = null
@@ -19,7 +21,6 @@ func _physics_process(delta):
 	velocity = direction * SPEED
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		
-
-
 	move_and_slide()
+	if global_position.distance_to(player.global_position)<65:
+		player.take_damage()
