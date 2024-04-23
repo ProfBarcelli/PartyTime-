@@ -1,29 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://b58u6n0xjtsvx"]
+[gd_scene load_steps=7 format=3 uid="uid://b58u6n0xjtsvx"]
 
 [ext_resource type="Texture2D" uid="uid://dxvn2wy662wvw" path="res://icon.svg" id="1_su5tr"]
 [ext_resource type="PackedScene" uid="uid://bdhfob71oixdn" path="res://personaggio.tscn" id="2_q1jkr"]
 [ext_resource type="PackedScene" uid="uid://bjlk57x11t87" path="res://enemy.tscn" id="3_0wtyg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_47sou"]
-size = Vector2(1, 1)
+size = Vector2(2.44232, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cayfn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lm73"]
+size = Vector2(648, 704)
 
 [node name="livello1" type="Node2D"]
 
 [node name="pavimento" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pavimento"]
-position = Vector2(577.5, 609.5)
+position = Vector2(1409, 609.5)
 scale = Vector2(1153, 77)
 shape = SubResource("RectangleShape2D_47sou")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="pavimento"]
 texture_repeat = 2
-position = Vector2(575.5, 608.5)
-scale = Vector2(1153, 77)
+position = Vector2(1406, 608.5)
+scale = Vector2(2814, 77)
 mesh = SubResource("BoxMesh_cayfn")
 texture = ExtResource("1_su5tr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="pavimento"]
+position = Vector2(-322, 251)
+shape = SubResource("RectangleShape2D_4lm73")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_q1jkr")]
 position = Vector2(565, 470)

@@ -7,26 +7,42 @@ var health = 100
 var n_salti = 0 
 var max_salti = 2
 var dir_sx = false
-func play_Animation():
 
+
+func play_Animation():
 	if Input.is_action_just_pressed("jump"):
-		%Animation.play("Jump_Right")
-		
+		if dir_sx :
+			%Animation.play("Jump_Left")
+			return
+		else :
+			%Animation.play("Jump_Right")
+			return
 	if velocity.y >0:
 		%Animation.play("Fall")
-	if abs(velocity.x) <5:
+		return
+	if abs(velocity.x) < 5 && velocity.y == 0 :
 		if dir_sx :
 			%Animation.play("Idle_Left")
-		elif velocity.y >0:
+			return
+		else:
 			%Animation.play("Idle_Right")
-	else:
+			return
+	if abs(velocity.x) > 5 && abs(velocity.x) < 500 && velocity.y == 0 :
 		if dir_sx:
 			%Animation.play("Walk_Left")
+			return
 		else:
 			%Animation.play("Walk_Right")
+			return
+	elif abs(velocity.x) > 500 && velocity.y == 0 :
+		if dir_sx:
+			%Animation.play("Run_Left")
+			return
+		else:
+			%Animation.play("Run_Right")
+			return
 
 
-#ciao a tutti
 func _physics_process(delta):
 	var d = Vector2()
 	if Input.is_action_pressed("move_left"):
@@ -39,7 +55,7 @@ func _physics_process(delta):
 		move_and_slide()
 		velocity = old_velocity
 	if d.length()==0:
-		velocity.x *= 0.95
+		velocity.x *= 0.80
 	else:
 		var accel = d*200
 		velocity += accel * delta
