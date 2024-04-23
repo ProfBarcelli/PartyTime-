@@ -28,5 +28,6 @@ texture = ExtResource("1_su5tr")
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_q1jkr")]
 position = Vector2(565, 470)
 
-[node name="Enemy" parent="." instance=ExtResource("3_0wtyg")]
+[node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_0wtyg")]
 position = Vector2(1017, 500)
+player = NodePath("../CharacterBody2D")
