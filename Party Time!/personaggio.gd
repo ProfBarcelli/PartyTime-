@@ -15,7 +15,7 @@ func play_Animation():
 			%Animation.play("Idle_Right")
 	else:
 		if dir_sx:
-			%Animation.play("Walk_Right")
+			%Animation.play("Walk_Left")
 		else:
 			%Animation.play("Walk_Right")
 	if velocity.y >0:
