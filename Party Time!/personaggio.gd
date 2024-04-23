@@ -1,4 +1,7 @@
 extends CharacterBody2D
+
+class_name Giocatore
+
 const g = 9.81
 var health = 100
 var n_salti = 0 
