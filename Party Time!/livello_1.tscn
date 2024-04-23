@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b58u6n0xjtsvx"]
+[gd_scene load_steps=7 format=3 uid="uid://b58u6n0xjtsvx"]
 
 [ext_resource type="Texture2D" uid="uid://dxvn2wy662wvw" path="res://icon.svg" id="1_su5tr"]
-[ext_resource type="PackedScene" uid="uid://bdhfob71oixdn" path="res://personaggio.tscn" id="2_q1jkr"]
-[ext_resource type="PackedScene" uid="uid://bjlk57x11t87" path="res://enemy.tscn" id="3_0wtyg"]
+[ext_resource type="PackedScene" path="res://personaggio.tscn" id="2_q1jkr"]
+[ext_resource type="PackedScene" uid="uid://bcn0dugr736fa" path="res://enemy.tscn" id="3_0wtyg"]
+[ext_resource type="PackedScene" uid="uid://bo4jo4sffx7l8" path="res://strider_k.tscn" id="4_048jy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_47sou"]
 size = Vector2(1, 1)
@@ -30,4 +31,8 @@ position = Vector2(565, 470)
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_0wtyg")]
 position = Vector2(1017, 500)
+player = NodePath("../CharacterBody2D")
+
+[node name="Enemy3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_048jy")]
+position = Vector2(925, 507)
 player = NodePath("../CharacterBody2D")
