@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bo4jo4sffx7l8"]
 
 [ext_resource type="Script" path="res://strider_k.gd" id="1_wqw1p"]
-[ext_resource type="Texture2D" uid="uid://lpls701qm64n" path="res://Sprites/Characters/Enemies/Strider Kappa/SK_placeholder.png" id="2_sgh6f"]
+[ext_resource type="Texture2D" uid="uid://biy47xahme0m5" path="res://Sprites/Characters/Enemies/Strider Kappa/SK_placeholder.png" id="2_sgh6f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_arqrt"]
-radius = 17.0
-height = 84.0
+radius = 32.0
+height = 144.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uc3s1"]
 animations = [{
@@ -29,7 +29,7 @@ shape = SubResource("CapsuleShape2D_arqrt")
 unique_name_in_owner = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(7, 2)
-scale = Vector2(0.618164, 0.618164)
+position = Vector2(14, -1)
+scale = Vector2(1.01367, 1.15234)
 sprite_frames = SubResource("SpriteFrames_uc3s1")
 animation = &"Idle (Change)"
