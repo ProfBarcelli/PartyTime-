@@ -8,18 +8,22 @@ var n_salti = 0
 var max_salti = 2
 var dir_sx = false
 func play_Animation():
+
+	if Input.is_action_just_pressed("jump"):
+		%Animation.play("Jump_Right")
+		
+	if velocity.y >0:
+		%Animation.play("Fall")
 	if abs(velocity.x) <5:
-		if dir_sx:
+		if dir_sx :
 			%Animation.play("Idle_Left")
-		else:
+		elif velocity.y >0:
 			%Animation.play("Idle_Right")
 	else:
 		if dir_sx:
 			%Animation.play("Walk_Left")
 		else:
 			%Animation.play("Walk_Right")
-	if velocity.y >0:
-		%Animation.play("Fall")
 
 
 #ciao a tutti
@@ -44,7 +48,7 @@ func _physics_process(delta):
 	else:
 		n_salti = 0
 	if Input.is_action_just_pressed("jump") and n_salti<max_salti :
-		velocity.y += -300
+		velocity.y += -400
 		n_salti += 1
 	if velocity.x<-0.5:
 		dir_sx = true
