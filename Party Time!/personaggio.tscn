@@ -18,16 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://drgvy8wh4tgdx" path="res://Sprites/Characters/Party/Dash/Party_dashWIP2.png" id="6_xlq8j"]
 [ext_resource type="Texture2D" uid="uid://hv45uqp0tflp" path="res://Sprites/Characters/Party/Dash/Party_dashWIP3.png" id="7_6biru"]
 [ext_resource type="Texture2D" uid="uid://bmt00urslyns5" path="res://Sprites/Characters/Party/Fall/Party_fall3.png" id="7_phjcf"]
-[ext_resource type="Texture2D" uid="uid://duesooyyrjar1" path="res://Sprites/Characters/Party/Hurt/Party_hurtWIP1.png" id="8_85ptr"]
 [ext_resource type="Texture2D" uid="uid://bjlfvv2yy0wdw" path="res://Sprites/Characters/Party/Dash/Party_dashWIP4.png" id="8_surqt"]
-[ext_resource type="Texture2D" uid="uid://b6ekontbgvjau" path="res://Sprites/Characters/Party/Hurt/Party_hurtWIP2.png" id="9_ocfep"]
 [ext_resource type="Texture2D" uid="uid://bu88ahjyuuhiq" path="res://Sprites/Characters/Party/Dash/Party_dashWIP5.png" id="9_xjwtn"]
 [ext_resource type="Texture2D" uid="uid://c8wrwti0np7v7" path="res://Sprites/Characters/Party/Dash/Party_dashWIP6.png" id="10_7t20a"]
-[ext_resource type="Texture2D" uid="uid://cnf2g8xweymd1" path="res://Sprites/Characters/Party/Hurt/Party_hurtWIP3.png" id="10_uvnau"]
 [ext_resource type="Texture2D" uid="uid://dwfmhnx63128p" path="res://Sprites/Characters/Party/Dash/Party_dashWIP7.png" id="11_je7sw"]
 [ext_resource type="Texture2D" uid="uid://3ochhyq44f5c" path="res://Sprites/Characters/Party/Dash/Party_dashWIP8.png" id="12_pcqbk"]
 [ext_resource type="Texture2D" uid="uid://dw818ovi7wxdm" path="res://Sprites/Characters/Party/Dash/Party_dashWIP9.png" id="13_yaxx3"]
+[ext_resource type="Texture2D" uid="uid://ctklwnqqnfbi0" path="res://Sprites/Characters/Party/Hurt/Party_hurt1.png" id="17_dsyb2"]
+[ext_resource type="Texture2D" uid="uid://beqw31ulqfwjq" path="res://Sprites/Characters/Party/Hurt/Party_hurt2.png" id="18_s52rp"]
 [ext_resource type="Texture2D" uid="uid://4s4mwp5sgsgg" path="res://Sprites/Characters/Party/Run/Party_runLEFT1.png" id="19_0uwxq"]
+[ext_resource type="Texture2D" uid="uid://638ertb21k4i" path="res://Sprites/Characters/Party/Hurt/Party_hurt3.png" id="19_ls3c2"]
 [ext_resource type="Texture2D" uid="uid://cjk1ka3jbj13u" path="res://Sprites/Characters/Party/Run/Party_runLEFT2.png" id="20_smnkd"]
 [ext_resource type="Texture2D" uid="uid://b80daoy3k5gys" path="res://Sprites/Characters/Party/Run/Party_runLEFT3.png" id="21_mcr2s"]
 [ext_resource type="Texture2D" uid="uid://d0584575aukly" path="res://Sprites/Characters/Party/Run/Party_runLEFT4.png" id="22_52r7y"]
@@ -127,13 +127,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_85ptr")
+"texture": ExtResource("17_dsyb2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_ocfep")
+"texture": ExtResource("18_s52rp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_uvnau")
+"texture": ExtResource("19_ls3c2")
 }],
 "loop": true,
 "name": &"Hurt",
@@ -316,7 +316,8 @@ script = ExtResource("1_dg6h0")
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_mj2m4")
-animation = &"Jump_Right"
+animation = &"Hurt"
+frame_progress = 0.865386
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_2ebur")
