@@ -56,10 +56,16 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		d.x = 1
 	if Input.is_action_pressed("dash"):
-		var old_velocity = velocity
-		velocity = Vector2(1000,0)
-		move_and_slide()
-		velocity = old_velocity
+		if dir_sx:
+			var old_velocity = velocity
+			velocity = Vector2(-1000,0)
+			move_and_slide()
+			velocity = old_velocity
+		else:
+			var old_velocity = velocity
+			velocity = Vector2(1000,0)
+			move_and_slide()
+			velocity = old_velocity
 	if d.length()==0:
 		velocity.x *= 0.80
 	else:
