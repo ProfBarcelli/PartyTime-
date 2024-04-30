@@ -1,5 +1,5 @@
 extends ProgressBar
-@onready var timer = $timer 
+@onready var timer = $timer2
 @onready var damage_bar = $DamageBar2
  
 var health = 100
@@ -23,5 +23,6 @@ func set_health(new_health):
 		damage_bar.value = health 
 
 
-func _on_timer_timeout():
+
+func _on_timer_2_timeout():
 	damage_bar.value = health 
