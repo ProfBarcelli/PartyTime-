@@ -2,10 +2,12 @@ extends CharacterBody2D
 
 class_name Giocatore
 
+@onready var healthbar = $HealthBar
+
 const g = 9.81
-var health = 100
 var n_salti = 0 
 var max_salti = 2
+var health = 100
 var dir_sx = false
 var damaged = false
 
@@ -49,6 +51,11 @@ func play_Animation():
 			return
 
 
+func _ready():
+	health = 100
+	healthbar.init_health(health)
+
+
 func _physics_process(delta):
 	var d = Vector2()
 	if Input.is_action_pressed("move_left"):
@@ -82,8 +89,9 @@ func _physics_process(delta):
 	
 func take_damage():
 	print("took damage")
-	health -=10
+	health -=1
 	damaged = true
+	healthbar.health = health 
 	if health == 0:
 		queue_free()
 
