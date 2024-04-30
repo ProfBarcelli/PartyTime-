@@ -82,7 +82,7 @@ func _physics_process(delta):
 	
 func take_damage():
 	print("took damage")
-	health -=1 
+	health -=10
 	damaged = true
 	if health == 0:
 		queue_free()

@@ -8,7 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export var player:Giocatore = null
 
-const SPEED = 150.0
+const SPEED = 100.0
 
 func _ready():
 	get_node("/root/livello1/Enemy")
