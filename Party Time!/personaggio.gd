@@ -15,17 +15,20 @@ func play_Animation():
 		%Animation.play("Hurt")
 		damaged= false
 		return
-	
-	if Input.is_action_just_pressed("jump"):
-		if dir_sx :
-			%Animation.play("Jump_Left")
+	if velocity.y !=0:
+		if velocity.y < 0:
+			if dir_sx :
+				%Animation.play("Jump_Left")
+				return
+			else :
+				%Animation.play("Jump_Right")
+				return
+		elif velocity.y > 0:
+			%Animation.play("Fall_Right")
 			return
-		else :
-			%Animation.play("Jump_Right")
+		else:
+			%Animation.play("Fall_Left")
 			return
-	if velocity.y >0:
-		%Animation.play("Fall")
-		return
 	if abs(velocity.x) < 5 && velocity.y == 0 :
 		if dir_sx :
 			%Animation.play("Idle_Left")

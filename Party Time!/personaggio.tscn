@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bdhfob71oixdn"]
+[gd_scene load_steps=58 format=3 uid="uid://bdhfob71oixdn"]
 
 [ext_resource type="Script" path="res://personaggio.gd" id="1_dg6h0"]
 [ext_resource type="Texture2D" uid="uid://celdsga87sih3" path="res://Sprites/Characters/Party/Acceleration/Party_accelerateWIP1.png" id="2_ibk6a"]
@@ -16,7 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://cn8tcncqbasdx" path="res://Sprites/Characters/Party/Fall/Party_fall2.png" id="6_h3cii"]
 [ext_resource type="Texture2D" uid="uid://l6quanqycarf" path="res://Sprites/Characters/Party/Fall/Party_fall3.png" id="7_phjcf"]
 [ext_resource type="Texture2D" uid="uid://bx1nq7e35n6hs" path="res://Sprites/Characters/Party/Hurt/Party_hurt1.png" id="8_i3adp"]
+[ext_resource type="Texture2D" uid="uid://k62bdbj0pwvp" path="res://Sprites/Characters/Party/Fall/Party_fallLEFT1.png" id="8_yimvy"]
+[ext_resource type="Texture2D" uid="uid://c4ktn8dat0tm8" path="res://Sprites/Characters/Party/Fall/Party_fallLEFT2.png" id="9_23rx5"]
 [ext_resource type="Texture2D" uid="uid://boirjuml7uxv6" path="res://Sprites/Characters/Party/Hurt/Party_hurt2.png" id="9_yp466"]
+[ext_resource type="Texture2D" uid="uid://cuntwhxe4jd3u" path="res://Sprites/Characters/Party/Fall/Party_fallLEFT3.png" id="10_876im"]
 [ext_resource type="Texture2D" uid="uid://scxkv777slph" path="res://Sprites/Characters/Party/Hurt/Party_hurt3.png" id="10_d21ye"]
 [ext_resource type="Texture2D" uid="uid://f6i04dm06842" path="res://Sprites/Characters/Party/Run/Party_runLEFT1.png" id="19_0uwxq"]
 [ext_resource type="Texture2D" uid="uid://cuqqkgrg1k8jo" path="res://Sprites/Characters/Party/Run/Party_runLEFT2.png" id="20_smnkd"]
@@ -80,8 +83,22 @@ animations = [{
 "texture": ExtResource("7_phjcf")
 }],
 "loop": true,
-"name": &"Fall",
+"name": &"Fall_Right",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_yimvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_23rx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_876im")
+}],
+"loop": true,
+"name": &"Fall_left",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -274,7 +291,7 @@ script = ExtResource("1_dg6h0")
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_mj2m4")
-animation = &"Run_Left"
+animation = &"Fall_Right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_2ebur")
