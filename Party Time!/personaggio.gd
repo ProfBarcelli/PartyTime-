@@ -9,11 +9,17 @@ var max_salti = 2
 var dir_sx = false
 var damaged = false
 var status
+var dash
 
 @export var player:Strider_K = null
 
 func find_animation():
-	if damaged:
+	if dash:
+		if dir_sx :
+			status=11
+		else:
+			status=11
+	elif damaged:
 		if dir_sx :
 			status=-1  #hurt
 		else:
@@ -69,7 +75,10 @@ func play_Animation():
 			%Animation.play("Run_Left")
 		10:
 			%Animation.play("Run_Right")
+		11:
+			%Animation.play("Dash")
 	damaged=false
+	dash=false
 
 
 func _physics_process(delta):
@@ -80,11 +89,13 @@ func _physics_process(delta):
 		d.x = 1
 	if Input.is_action_pressed("dash"):
 		if dir_sx:
+			dash=true
 			var old_velocity = velocity
 			velocity = Vector2(-1000,0)
 			move_and_slide()
 			velocity = old_velocity
 		else:
+			dash=true
 			var old_velocity = velocity
 			velocity = Vector2(1000,0)
 			move_and_slide()
