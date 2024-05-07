@@ -23,11 +23,11 @@ func play_Animation():
 			else :
 				%Animation.play("Jump_Right")
 				return
+		elif velocity.y > 0 && dir_sx:
+			%Animation.play("Fall_Left")
+			return
 		elif velocity.y > 0:
 			%Animation.play("Fall_Right")
-			return
-		else:
-			%Animation.play("Fall_Left")
 			return
 	if abs(velocity.x) < 5 && velocity.y == 0 :
 		if dir_sx :
