@@ -8,48 +8,68 @@ var n_salti = 0
 var max_salti = 2
 var dir_sx = false
 var damaged = false
+var status
 
 @export var player:Strider_K = null
-func play_Animation():
+
+func find_animation():
 	if damaged:
-		%Animation.play("Hurt")
-		damaged= false
-		return
-	if velocity.y !=0:
+		if dir_sx :
+			status=-1  #hurt
+		else:
+			status=0
+	elif velocity.y !=0:
 		if velocity.y < 0:
 			if dir_sx :
-				%Animation.play("Jump_Left")
-				return
-			else :
-				%Animation.play("Jump_Right")
-				return
+				status=1 #jump_left
+			else:
+				status=2 #jump_right
 		elif velocity.y > 0 && dir_sx:
-			%Animation.play("Fall_Left")
-			return
-		elif velocity.y > 0:
-			%Animation.play("Fall_Right")
-			return
-	if abs(velocity.x) < 5 && velocity.y == 0 :
+			status=3 #fall_left
+		else:
+			status=4 #fall_right
+	elif abs(velocity.x) < 5 && velocity.y == 0:
 		if dir_sx :
-			%Animation.play("Idle_Left")
-			return
+			status=5 #idle_left
 		else:
-			%Animation.play("Idle_Right")
-			return
-	if abs(velocity.x) > 5 && abs(velocity.x) < 500 && velocity.y == 0 :
+			status=6 #idle_right
+	elif abs(velocity.x) > 5 && abs(velocity.x) < 500 && velocity.y == 0 :
 		if dir_sx:
-			%Animation.play("Walk_Left")
-			return
+			status=7 #walk_left
 		else:
-			%Animation.play("Walk_Right")
-			return
+			status=8 #walk_right
 	elif abs(velocity.x) > 500 && velocity.y == 0 :
 		if dir_sx:
-			%Animation.play("Run_Left")
-			return
+			status=9 #run_left
 		else:
+			status=10 #run_right
+func play_Animation():
+	match status:
+		-1:
+			%Animation.play("Hurt_Left")
+		0:
+			%Animation.play("Hurt_Right")
+		1:
+			%Animation.play("Jump_Left")
+		2:
+			%Animation.play("Jump_Right")
+		3:
+			%Animation.play("Fall_Left")
+		4:
+			%Animation.play("Fall_Right")
+		5:
+			%Animation.play("Idle_Left")
+		6:
+			%Animation.play("Idle_Right")
+		7:
+			%Animation.play("Walk_Left")
+		8:
+			%Animation.play("Walk_Right")
+		9:
+			%Animation.play("Run_Left")
+		10:
 			%Animation.play("Run_Right")
-			return
+	damaged=false
 
 
 func _physics_process(delta):
@@ -85,6 +105,7 @@ func _physics_process(delta):
 		dir_sx = true
 	if velocity.x>0.5:
 		dir_sx = false
+	find_animation()
 	play_Animation()
 	move_and_slide()
 	
