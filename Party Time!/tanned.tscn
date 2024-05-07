@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://8gpe2u35asem"]
+[gd_scene load_steps=3 format=3 uid="uid://8gpe2u35asem"]
+
+[ext_resource type="Script" path="res://tanned.gd" id="1_nppts"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5b6co"]
 radius = 20.0
 height = 78.0
 
 [node name="Tanned" type="CharacterBody2D"]
+script = ExtResource("1_nppts")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -18.0
@@ -16,5 +19,5 @@ offset_bottom = 38.0
 unique_name_in_owner = true
 shape = SubResource("CapsuleShape2D_5b6co")
 
-[node name="Area2D" type="Area2D" parent="."]
-unique_name_in_owner = true
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 250)
