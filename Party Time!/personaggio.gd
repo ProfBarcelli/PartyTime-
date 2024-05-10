@@ -10,8 +10,13 @@ var dir_sx = false
 var damaged = false
 var status
 var dash
+var dashTimer = 0
+var dashCooldown = 1
+var dashLoadTime = 0.5 
+var dashLoaded = true
 
 @export var player:Strider_K = null
+
 
 func find_animation():
 	if dash:
@@ -83,23 +88,24 @@ func play_Animation():
 
 func _physics_process(delta):
 	var d = Vector2()
+	if Input.is_action_pressed("dash"):
+		if not dashLoaded:
+			dashTimer += delta
+			if dashTimer >= dashLoadTime:
+				dashLoaded = true
+		if dashLoaded:
+			if Input.is_action_pressed("dash") and is_on_cooldown():
+				perform_dash()
+		if dashLoaded and is_on_cooldown():
+			dashTimer += delta
+			if dashTimer >= dashCooldown:
+				dashTimer = 0
+				dashLoaded = false
 	if Input.is_action_pressed("move_left"):
 		d.x = -1
 	if Input.is_action_pressed("move_right"):
 		d.x = 1
-	if Input.is_action_pressed("dash"):
-		if dir_sx:
-			dash=true
-			var old_velocity = velocity
-			velocity = Vector2(-1000,0)
-			move_and_slide()
-			velocity = old_velocity
-		else:
-			dash=true
-			var old_velocity = velocity
-			velocity = Vector2(1000,0)
-			move_and_slide()
-			velocity = old_velocity
+
 	if d.length()==0:
 		velocity.x *= 0.80
 	else:
@@ -120,7 +126,18 @@ func _physics_process(delta):
 	play_Animation()
 	move_and_slide()
 	
-	
+func is_on_cooldown():
+	return dashTimer < dashCooldown
+
+func perform_dash():
+	if dir_sx:
+		velocity.x = -10000
+	else:
+		velocity.x = 10000
+	dash = true
+	dashLoaded = false
+	dashTimer = 0
+
 func take_damage():
 	print("took damage")
 	health -=1
@@ -131,3 +148,4 @@ func take_damage():
 func player_damage():
 	if %Area2D.overlaps_body() > 0:
 		take_damage()
+
