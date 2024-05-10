@@ -1,11 +1,20 @@
 extends CharacterBody2D
 
+@onready var ray_cast = $RayCast2D
+@onready var timer = $Timer
+@export var ammo : PackedScene
 
+var player
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+func _ready():
+	player = get_parent().find_child("res://personaggio.tscn")
 
 func _physics_process(delta):
+	_aim()
+	_check_player_collision()
 
+func _aim():
+	ray_cast.target_position = to_local(player.position)
+
+func _check_player_collision():
+	pass
