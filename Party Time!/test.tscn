@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8op0s2bdu8pq"]
+
+[ext_resource type="PackedScene" uid="uid://bdhfob71oixdn" path="res://personaggio.tscn" id="1_n4xy8"]
+[ext_resource type="PackedScene" uid="uid://8gpe2u35asem" path="res://tanned.tscn" id="3_cu27f"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_n4xy8")]
+position = Vector2(459, 390)
+
+[node name="Tanned" parent="." instance=ExtResource("3_cu27f")]
+position = Vector2(447, 87)
