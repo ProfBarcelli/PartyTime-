@@ -21,9 +21,9 @@ var dashLoaded = true
 func find_animation():
 	if dash:
 		if dir_sx :
-			status=11
+			status=11 #dash sx
 		else:
-			status=11
+			status=11 #dash dx
 	elif damaged:
 		if dir_sx :
 			status=-1  #hurt
